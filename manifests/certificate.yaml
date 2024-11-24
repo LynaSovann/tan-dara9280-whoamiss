@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tan-dara9280-whoamiss-certificate
+  namespace: tan-dara9280-whoamiss
+spec:
+  secretName: tan-dara9280-whoamiss-secret-tls
+  commonName: tan-dara9280-whoamiss.assessify.org
+  dnsNames:
+  - tan-dara9280-whoamiss.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
