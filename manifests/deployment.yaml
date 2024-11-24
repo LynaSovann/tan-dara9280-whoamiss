@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tan-dara9280-whoamiss-deployment
+  labels:
+    app: tan-dara9280-whoamiss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tan-dara9280-whoamiss
+  template:
+    metadata:
+      labels:
+        app: tan-dara9280-whoamiss
+    spec:
+      containers:
+        - name: tan-dara9280-whoamiss-container
+          image: pipejet/tan-dara9280-whoamiss:0
+          ports:
+            - containerPort: 3000
